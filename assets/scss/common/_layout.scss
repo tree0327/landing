@@ -1,0 +1,32 @@
+#ct{ 
+  position: relative; 
+  @include flex-column;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $lg-max-container;
+  padding: 0 $gutter;
+}
+
+// section
+section{
+  width: 100%;
+  padding: $section-padding;
+  
+  @include max(T){
+    &{
+      $section-padding: 50px 0;
+      padding: $section-padding;
+    }
+  }
+
+  @include max(M){
+    &{
+      $section-padding: 50px 0;
+      padding: $section-padding;
+    }
+    
+  }
+}

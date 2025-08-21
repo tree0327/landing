@@ -1,0 +1,257 @@
+%form-main-title{
+    @include text-style(title, $navy, center);
+    margin-bottom: 45px;
+}
+
+/* form-1 */
+.form-1{
+    section{
+        background: url(../img/bg/bg-form1.png) no-repeat center / cover;
+    }
+    & .container {
+        background-color: $white;
+        max-width: 430px; 
+        border-radius: $radius;
+        padding: 38px 50px 29px;
+    }
+
+    .main-title{
+        @extend %form-main-title;
+    }
+
+    .form-row{
+        margin: 0;
+        gap: 20px;
+    }
+
+    .form-check{
+        margin: 42px 0 24px;
+
+        &-label{
+            color: $gray;
+        }
+    }
+
+    button{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .form-footer{
+        @include flex;
+        @include text-style(article);
+
+        p{
+            color: $gray;
+            margin-right: 9px;
+        }
+
+        a{
+            color: $mint;
+        }
+    }
+}
+
+/* form-13 */
+.form-13{
+    & form{
+        max-width: 1030px;
+    }
+
+    .main-title{
+        @extend %form-main-title;
+    }
+
+    .label-choice{
+        @include flex-column(center, start);
+        gap: $gutter;
+
+        label{
+            position: relative;
+            width: 100%;
+            @extend %border;
+            padding: 45px 64px;
+
+            &:has(input:checked){
+                border-color: $mint;
+            }
+
+            .text-article{
+                @include text-style(article, $navy);
+            }
+
+            .text-paragraph{
+                @include text-style(paragraph, $gray);
+                margin: 7px 0 $gutter;
+            }
+
+            .text-label{
+                @include text-style(label, $navy);
+                margin-bottom: 7px;
+            }
+
+            .row{
+                row-gap: 34px;
+            }
+
+            .button-wrapper{
+                @include flex(between, end);
+
+                & input{
+                    width: 30%;
+                }
+
+                button{
+                    width: 140px;
+                }
+            }
+        }
+    }
+
+    .card-wrap{ 
+        position:absolute;
+        @include flex(start, start);
+        right: 30px;
+        top: 26px;
+        gap: 19px;
+        z-index: -1;
+    }
+    .card{
+        width: 54px;
+        height: 42px; border: none; 
+    }
+    .card-01{
+        background: url(../img/form_13/01.png) no-repeat;
+        background-size: 100%; 
+    }
+    .card-02{ 
+        background: url(../img/form_13/02.png) no-repeat;
+        background-size: 100%;
+     }
+    .card-03{ 
+        background: url(../img/form_13/03.png) no-repeat;
+        background-size: 100%; 
+    }
+    .card-04{
+        background: url(../img/form_13/04.png) no-repeat;
+        background-size: 100%;
+    }
+}
+
+/* form-14 */
+.form-14{
+    & form{
+        max-width: 830px;
+    }
+
+    .main-title{
+        @include text-style(title, $navy, center);
+        margin-bottom: 58px;
+    }
+
+    .row{
+        @extend %border;
+        padding: 86px 100px;
+        row-gap: $gutter + 4;
+
+        @include max(M) {
+            &{
+                margin: 0;
+                padding: 30px;
+            }
+        }
+    }
+
+    .text-label{
+        @include text-style(label, $navy);
+        margin-bottom: 7px;
+    }
+
+    .form-footer{
+        width: 100%;
+        @include flex(between);
+
+        .card-info{
+            @include inline-flex;
+            gap: $gutter - 7;
+
+            .text-paragraph{
+                @include text-style(paragraph, $gray);
+            }
+        }
+
+        button{
+            width: 120px;
+            font-weight: 600;
+        }
+    }
+}
+
+/* form-15 */
+.form-15{
+    section{
+        background: #2F1893 url(../img/bg/bg-form15.png) no-repeat center / cover;
+    }
+
+    & .container {
+        
+        width: 100%;
+        max-width: 630px; 
+
+        .main-title{
+            @include text-style(title, $white, center);
+            margin-bottom: 60px;
+
+            @include max(T){
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .bx{
+        background-color: $white;
+        border: none;
+        border-radius: $radius;
+        overflow: hidden;
+
+        .row{
+            padding: 54px 70px 70px;
+            row-gap: 23px;
+
+            @include max(T){
+                padding: 30px 50px;
+            }
+
+            .text-label{
+                @include text-style(label, $navy);
+                margin-bottom: 7px;
+                font-weight: 600;
+            }
+
+            button{
+                width: 100%;
+                margin-top: 23px;
+            }
+        }
+     }
+
+     .nav{
+            @include flex;
+
+            &-link{
+                @include text-style(label, $gray, center);
+                width: 50%;
+                padding: 25px 0;
+                background-color: $white;
+                border-bottom: 2px solid $border-color;
+                font-weight: 700;
+
+                &.active{
+                    background: transparent;
+                    color: $navy;
+                    border-color: $navy;
+                }
+            }
+        }
+
+}

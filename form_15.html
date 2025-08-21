@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_15</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/scss/style.css">
+
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <main id="ct" class="form-15">
+            <section>
+                <!-- form-15 -->
+                <form class="container">
+                    <h3 class="main-title">Checkout</h3>
+                    <div class="bx">
+                        <!-- 상단 탭 // 클릭시 .tab-btn에 active -->
+                        <nav class="nav nav-pills">
+                            <a href="#cradit-card" class="nav-link active" data-toggle="tab">CREDIT CARD</a>
+                            <a href="#paypal" class="nav-link" data-toggle="tab">PAYPAL</a>
+                        </nav>
+                        <div class="tab-content">
+                            <div id="cradit-card" class="tab-pane active">
+                                <div class="row">
+                                    <!-- first name -->
+                                    <div class="col-lg-6">
+                                        <h5 class="text-label">FIRST NAME</h5>
+                                        <input type="text" class="form-control form-md" placeholder="First name">
+                                    </div>
+                                    <!-- last name -->
+                                    <div class="col-lg-6">
+                                        <h5 class="text-label">LAST NAME</h5>
+                                        <input type="password" class="form-control form-md" placeholder="Last name">
+                                    </div>
+                                    <!-- card number -->
+                                    <div class="col-lg-8">
+                                        <h5 class="text-label">CARD NUMBER</h5>
+                                        <input type="password" class="form-control form-md">
+                                    </div>
+                                    <!-- cvv -->
+                                    <div class="col-lg-4">
+                                        <h5 class="text-label">CVV</h5>
+                                        <input type="password" class="form-control form-md">
+                                    </div>
+                                    <!-- exp date -->
+                                    <div class="col-lg-6">
+                                        <h5 class="text-label">EXP DATE</h5>
+                                        <input type="password" class="form-control form-md" placeholder="MM/YYYY">
+                                    </div>
+                                    <!-- country -->
+                                    <div class="col-lg-6">
+                                        <h5 class="text-label">COUNTRY</h5>
+                                        <input type="password" class="form-control form-md">
+                                    </div>
+                                    <!-- 하단 버튼 -->
+                                    <button type="submit" class="btn-primary btn-60">Purchase</button>
+                                </div>
+                            </div>
+                            <div id="paypal" class="tab-pane">
+                                 <div class="row">
+                                    <!-- first name -->
+                                    <div class="col-lg-12">
+                                        <h5 class="text-label">ID</h5>
+                                        <input type="text" class="form-control form-md" placeholder="First name">
+                                    </div>
+                                    <!-- last name -->
+                                    <div class="col-lg-12">
+                                        <h5 class="text-label">PASS WORD</h5>
+                                        <input type="password" class="form-control form-md" placeholder="Last name">
+                                    </div>
+                                     <button type="submit" class="btn-primary btn-60">Submit</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

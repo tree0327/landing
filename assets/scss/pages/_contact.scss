@@ -1,0 +1,151 @@
+.contact-7{
+    .bg{
+        position: relative;
+        img{
+            object-fit: cover;
+            width: 100vw;
+            height: 300px;
+        }
+
+        &:before{
+            content: '';
+            position: absolute;
+            left: calc(50% + 9vh);
+            top: 28%;
+            
+            width: 29px;
+            height: 40px;
+            background: url(../img/icon/map-marker.svg) no-repeat center / 100% 100%;
+        }
+}
+
+    form{
+        max-width: 1030px;
+        margin-top: 60px;
+
+        .main-title{
+            @include text-style(title, $navy);
+            margin-bottom: 25px;
+        }
+
+        .sub-title{
+            @include text-style(sub, $navy);
+        }
+
+        .text-paragraph{
+            @include text-style(paragraph, $gray);
+        }
+
+        .text-label{
+            @include text-style(label, $navy);
+            margin: 30px 0 6px;
+            font-weight: 600;
+        }
+
+        .text-article{
+            @include text-style(artice, $navy);
+            font-weight: 600;
+        }
+
+         .form-footer{
+            @include flex(start, start);
+            margin: 0;
+
+            &-input{
+                width: 100%;
+            }
+
+            &-button{
+                margin-left: 10px;
+                width: 90px;
+            }
+        }
+
+        .grid{
+            @include flex(start, start);
+            gap: 130px;
+
+            &-left{
+                flex: 1;
+                max-width: 370px;
+            }
+
+            &-right{
+                flex: 1;
+                max-width: 470px;
+            }
+        }
+        @include max(M){
+                .grid{
+                flex-direction: column;
+                gap: 60px;
+
+                &-left{
+                    width: 100%;
+                    max-width: none !important;
+                }
+
+                &-right{
+                    width: 100%;
+                    max-width: none !important;
+                }
+            }
+        }
+    }
+
+    .contact-info{
+        gap: 12px;
+        padding: 39px 0 48.3px;
+        border-bottom: 1px solid rgba(105, 32, 32, 0.1);
+
+        .text-article{
+            display: block;
+            padding-left: 32.5px;
+
+            &:first-child{
+                background: url(../img/icon/phone.svg) no-repeat center left / 15px 15px;
+                margin-bottom: 12px;
+            }
+
+            &:last-child{
+                background: url(../img/icon/msg.svg) no-repeat center left / 18px 18px;
+            }
+        }
+    }
+    .contact-sns{ 
+        padding-top: 42.7px;
+
+        &-list{
+            @include flex(start, start);
+            flex-wrap: wrap;
+            row-gap: 14px;
+            margin-top: 20px;
+
+            & > li{
+                width: 50%;
+                max-width: 200px;
+                @include text-style(paragraph, $gray);
+                padding-left: 32px;
+            }
+
+            .facebook{ 
+            background: url(../img/icon/facebook.svg) no-repeat left center / 16px 16px;
+            }
+            .dribble{ 
+                background: url(../img/icon/dribble.svg) no-repeat left center / 16px 16px; 
+            }
+            .twitter{ 
+                background: url(../img/icon/Twitter.svg) no-repeat left center / 17px 17px; 
+            }
+            .behance{ 
+                background: url(../img/icon/behance.svg) no-repeat left center / 21px 21px; 
+            }
+            .pinterest{ 
+                background: url(../img/icon/pinterest.svg) no-repeat left center / 16px 16px; 
+            }
+            .linkedin{ 
+                background: url(../img/icon/linkedIn.svg) no-repeat left center / 16px 16px; 
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_13</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/scss/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <main id="ct" class="form-13">
+            <section>
+                <!-- form-13 -->
+                <form class="container">
+                    <h3 class="main-title">Choose Your Payment Method</h3>
+                    <!-- paypal or credit card 선택시 bx에 active -->
+                    <div class="label-choice">
+                        <!-- paypal -->
+                        <label for="paypal" class="">
+                            <div class="form-radio">
+                                <input type="radio" class="sr-only" id="paypal" name="payment">
+                                <div class="form-radio-label">
+                                    <span class="text-article">PayPal</span>
+                                    <p class="text-paragraph">Safe payment online. Credit card needed. PayPal account is not necessary.</p>
+                                    <div class="row">
+                                        <div class="input-col col-lg-6 col-sm-12">
+                                            <input type="email" class="form-control form-md" id="Email" placeholder="Email address">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <!-- credit card -->
+                        <label for="credit-card" class="active">
+                            <div class="form-radio">
+                                <input type="radio" class="sr-only" id="credit-card" name="payment" checked>
+                                <div class="form-radio-label">
+                                    <span class="text-article">Credit Card</span>
+                                    <p class="text-paragraph">Safe money transfer using your bank account.</p>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-12">
+                                            <h5 class="text-label">CREDIT CARD NUMBER</h5>
+                                            <input type="text" class="form-control form-md">
+                                        </div>
+                                        <div class="col-lg-6 col-sm-12">
+                                            <h5 class="text-label">EXPIRATION</h5>
+                                            <input type="password" class="form-control form-md">
+                                        </div>
+                                        <div class="col-lg-6 col-sm-12">
+                                            <h5 class="text-label">CARDHOLDER NAME</h5>
+                                            <input type="password" class="form-control form-md">
+                                        </div>
+                                        <div class="col-lg-6 col-sm-12">
+                                            <h5 class="text-label">CVV CODE</h5>
+                                            <div class="button-wrapper">
+                                                <input type="password" class="form-control form-md">
+                                                <button type="submit" class="btn btn-primary btn-50">Checkout </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 카드 아이콘 -->
+                            <div class="card-wrap">
+                                <div class="card card-01"></div>
+                                <div class="card card-02"></div>
+                                <div class="card card-03"></div>
+                                <div class="card card-04"></div>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

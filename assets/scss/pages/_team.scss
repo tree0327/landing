@@ -1,0 +1,68 @@
+.team-1{
+    .main-title{
+        @include text-style(title, $navy, center);
+        margin-bottom: 20px;
+    }
+
+    .sub-title{
+        @include text-style(sub, $gray, center);
+        margin-bottom: 47px;
+    }
+
+    .text-label{
+        @include text-style(label, $gray, center);
+        font-weight: 600;
+    }
+
+    .row:has(.team-box){
+        margin-top: 77px;
+
+        @include max(M){
+            row-gap: $gutter;
+        }
+    }
+}
+
+.team-box{
+    border: 2px solid $border-color;
+    border-radius: $radius;
+}
+
+.team-img{
+    @include flex;
+    margin-top: 50px;
+}
+
+.team-text{
+    padding: 28.8px 0 35px;
+
+    .sub-title{
+        color: $navy;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+}
+
+.team-sns{
+    @include flex;
+    border-top: 2px solid $border-color;
+
+    .btn-sns{
+        width: calc(100% / 3); height: 60.5px;
+
+        &:not(:last-child){
+            border-right: 2px solid $border-color;
+            border-radius: 0;
+        }
+
+        &.twitter{ 
+            background: url(../img/icon/twitter-gray.svg) no-repeat center / 21px auto; 
+        }
+        &.facebook{ 
+            background: url(../img/icon/facebook-gray.svg) no-repeat center / 19px auto; 
+        }
+        &.dribble{ 
+            background: url(../img/icon/dribble-gray.svg) no-repeat center / 19px auto; 
+        }
+    }
+}

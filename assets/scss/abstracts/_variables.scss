@@ -1,0 +1,57 @@
+// font
+$font-sans: 'DM sans', serif, -apple-system, sans-serif; 
+// color
+$white: #fff;
+$gray: rgba(21, 20, 57, 0.4);
+$navy: #1e0e62;
+$mint: #25dac5;
+$border-color: #ebeaed;
+
+
+// util
+$radius: 10px;
+$form-radius: 100px;
+
+// layout
+$section-padding: 100px 0;
+
+$md-breakpoint: 768px;
+$lg-breakpoint: 992px;
+
+$gutter: 30px;
+
+$columns: 12;
+$sm-padding: 20px;
+
+$md-padding: 30px;
+
+$lg-unit: 70px;
+$lg-max-container: (($lg-unit + $gutter) * $columns) + $gutter;
+
+// text-style
+$font-size-main: 42px;
+$line-height-main: 52px;
+$letter-spacing-main: -0.4px;
+
+$font-size-sub: 22px;
+$line-height-sub: 32px;
+
+$font-size-article: 18px;
+$line-height-article: 28px;
+
+$font-size-label: 14px;
+$line-height-label: 26px;
+$letter-spacing-label: 2px;
+
+$font-size-paragraph: 16px;
+$line-height-paragraph: 26px;
+
+
+// map
+$flex-map: (
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  stretch: stretch,
+  center: center,
+);

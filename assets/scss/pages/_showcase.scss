@@ -1,0 +1,38 @@
+.showcase-1{
+    .main-title{
+        @include text-style(title, $navy, center);
+        margin-bottom: 20px;
+    }
+
+    .sub-title{
+        @include text-style(sub, $gray, center);
+    }
+
+    .row:has(.showcase){
+        row-gap: 70px;
+    }
+}
+
+.showcase-button-group{
+    @include flex;
+    gap: $gutter;
+    margin: 55px 0 80px;
+
+    @include max(M){
+        &{
+            gap: $gutter / 2;
+        }
+    }
+}
+
+.showcase{
+    .sub-title{
+        @include text-style(sub, $navy);
+        font-weight: 700;
+        margin: 20px 0 10px;
+    }
+
+    .text-paragraph{
+        @include text-style(paragraph, $gray);
+    }
+}

@@ -1,0 +1,121 @@
+// breakpoint
+@mixin max($screen) {
+  @if ($screen == 'T') {
+    @media ( max-width: ($lg-breakpoint - 0.1) ) {
+      @content;
+    }
+  }
+
+  @if ($screen == 'M') {
+    @media (max-width: ($md-breakpoint - 0.1)) {
+      @content;
+    }
+  }
+}
+
+// text-style
+@mixin text-title(){
+  font-size: $font-size-main;
+  line-height: $line-height-main;
+  letter-spacing: $letter-spacing-main;
+  font-weight: 700;
+}
+
+@mixin text-sub(){
+  font-size: $font-size-sub;
+  line-height: $line-height-sub; 
+}
+
+@mixin text-article(){
+  font-size: $font-size-article;
+  line-height: $line-height-article;
+  font-weight: 500;
+}
+
+@mixin text-label(){
+  font-size: $font-size-label;
+  line-height: $line-height-label;
+  letter-spacing: $letter-spacing-label;
+}
+
+@mixin text-paragraph(){
+  font-size: $font-size-paragraph;
+  line-height: $line-height-paragraph;
+}
+
+@mixin text-style($type, $color: false, $align: left) {
+  @if ($type == title) {
+    @include text-title;
+  }
+  @if ($type == sub) {
+    @include text-sub;
+  }
+  @if ($type == article) {
+    @include text-article;
+  }
+  @if ($type == label) {
+    @include text-label;
+  }
+  @if ($type == paragraph) {
+    @include text-paragraph;
+  }
+
+  @if (type-of($color) == color) {
+    color: $color;
+  }
+
+  @if ($align == center ){
+    text-align: center;
+  } 
+}
+
+// flex
+@function _get-flex-value($key) {
+  @return map-get($flex-map, $key);
+}
+
+@mixin flex($jc: center, $ai: center) {
+  display: flex;
+  justify-content: _get-flex-value($jc);
+  align-items: _get-flex-value($ai);
+}
+
+@mixin inline-flex($jc: center, $ai: center) {
+  display: inline-flex;
+  justify-content: _get-flex-value($jc);
+  align-items: _get-flex-value($ai);
+}
+
+@mixin flex-column($jc: center, $ai: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: _get-flex-value($jc);
+  align-items: _get-flex-value($ai);
+}
+
+// absolute
+@mixin ab-center-x($type: absolute) {
+  @if ($type == fixed or $type == absolute) {
+    position: $type;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@mixin ab-center-y($type: absolute) {
+  @if ($type == fixed or $type == absolute) {
+    position: $type;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin ab-center($type: absolute) {
+  @if ($type == fixed or $type == absolute) {
+    position: $type;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+

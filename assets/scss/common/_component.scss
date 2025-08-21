@@ -1,0 +1,399 @@
+// button
+%btn-base {
+  @include inline-flex;
+  font-weight: 700;
+  border-radius: 100px;
+}
+
+// button style
+
+.btn-primary {
+  @extend %btn-base;
+  color: $white;
+  background-color: $mint;
+  border: none;
+
+  &:hover{
+    background-color: $navy;
+    transition: background-color 300ms ease-in-out;
+  }
+}
+
+.btn-outlined {
+  @extend %btn-base;
+  color: $navy;
+  background-color: $white;
+  border: 2px solid $border-color;
+
+  &:hover{
+    background-color: $border-color;
+    transition: background-color 300ms ease-in-out;
+  }
+}
+
+.btn-ghost {
+  @extend %btn-base;
+  color: $white;
+  background-color: transparent;
+  border: 2px solid $border-color;
+}
+
+// button Size
+.btn-40 {
+  padding: 0 20px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.btn-50 {
+    padding: 0 22px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.btn-60 {
+    padding: 0 29px;
+    height: 60px;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+// form
+.form-control{
+    @include inline-flex;
+    padding: 0;
+    background-color: #fff;
+    font-weight: 600;
+    border: 2px solid $border-color;
+    border-radius: $form-radius;
+
+    &::placeholder{
+        color: $gray;
+        font-weight: 500;
+    }
+
+    &.form-sm{
+        height: 40px;
+        padding: 0 18px;
+    }
+
+    &.form-md{
+        height: 50px;
+        padding: 0 24px;
+    }
+
+    &.form-lg{
+        height: 60px;
+        padding: 0 24px;
+    }
+}
+
+%choice-base {
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  line-height: 26px;
+  padding-left: 0;
+}
+
+%label-base{
+  display: inline-block; 
+  vertical-align: top; 
+  padding-left: 38px; 
+}
+
+// input type text
+.form-control.message{ 
+  height: 170px;
+  border-radius: $radius; 
+  padding: 0 24px;
+
+  &::placeholder{
+    position: absolute; top: 13px;
+  }
+}
+
+// checkbox
+.form-check{
+  @extend %choice-base;
+
+  &-label{
+    @extend %label-base;
+    width: 100%;
+    background: url(../img/icon/check_none.svg) no-repeat  0 0.3rem / 20px 20px;
+
+    input:checked+&{
+      background-image: url(../img/icon/Check-on.svg);
+    }
+  }
+}
+
+// radio
+.form-radio{
+  @extend %choice-base;
+
+  
+  &-label{
+    @extend %label-base;
+    width: 100%;
+    background: url(../img/icon/radio_off.svg) no-repeat  0 0.3rem / 20px 20px;
+
+    input:checked+&{
+      background-image: url(../img/icon/radio_on.svg);
+    }
+  }
+}
+
+.acc-color{
+      @include inline-flex(start, start);
+      gap: 5px;
+
+      &-label{
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          cursor: pointer;
+
+          &.blue{ background: #4267b2; }
+          &.purple{ background: #482be7; }
+          &.pink{ background: #e93a7d; }
+          &.ylw{ background: #fffc00; }
+          &.navy{ background: $navy; }
+          &.grn{ background: #27ae60; }
+          &.red{ background: #C8232C; }
+          &.red2{ background: #EA3223; }
+          &.skyblue{ background: #1DA1F2; }
+      }
+
+     .form-color:has(input[type=radio]){
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+
+      .form-color:has(input:checked):before{
+            content: '';
+            @include ab-center;
+            width: 10px;
+            height: 7px;
+            background: url(../img/icon/color-check.svg) no-repeat;
+      }
+  }
+
+// check-toggle
+.check-toggle{
+    @include flex;
+    margin-top: 40px;
+
+    &:has(input:checked) ~ .monthly{
+      display: none;
+    }
+
+    &:has(input:checked) ~ .yearly{
+      display: block;
+    }
+
+    &:not(:has(input:checked)) ~ .yearly{
+      display: none;
+    }
+
+    &:not(:has(input:checked)) ~ .monthly{
+      display: block;
+    }
+
+    &-input{
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 26px;
+      color: $navy;
+    }
+
+    &-label{
+      @include flex(between);
+       width: 190px;
+       height: 30px;
+       background: url(../img/icon/switch-off.svg) no-repeat center / 42px 30px;
+
+       input:checked+&{
+        background: url(../img/icon/switch-on.svg) no-repeat center / 42px 30px;
+       }
+
+       .text-paragraph{
+        width: 60px;
+        display: inline-block;
+
+        &:last-child{
+          text-align: left;
+        }
+       }
+    }
+  }
+
+// input type select
+.form-select{ 
+  display: inline-block; 
+  background: url(../img/icon/btn-down.svg) no-repeat center right / 11px 26px; 
+  border: none; 
+  padding: 0; 
+  text-align: center; 
+  font-size: 14px; 
+  line-height: 26px; 
+  letter-spacing: 2px; 
+  width: auto; 
+  padding-right: 16px; 
+  color: $navy;
+  font-weight: 600; 
+  appearance: none;
+}
+
+// badge
+  .badge-price { 
+    @include inline-flex;
+    width: 67px; 
+    height: 30px; 
+    background-color: $border-color; 
+    border-radius: $form-radius;
+    font-size: 16px; 
+    line-height: 22px; 
+    color: $gray; 
+    font-weight: 500; 
+  }
+
+// box
+%border{
+  border: 2px solid $border-color;
+  border-radius: $radius;
+}
+
+
+// ecommerce-33 
+  // color
+  .item-color-wrap{ 
+      @include flex(start);
+      width: 152px;
+      height: 40px;
+      gap: 5px;
+      padding: 0 11px;
+      border: 2px solid $border-color; border-radius: $form-radius;
+      margin-top: 2px;
+
+      & button{
+          position: relative;
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          border: none;
+      }
+
+      .gray{
+          background-color: $gray;
+      }
+      .blue{
+          background-color: #4267B2;
+      }
+      .org{
+          background-color: #F2994A;
+      }
+      .red{
+          background-color: #EB5757;
+      }
+      .grn{
+          background-color: #219653;
+      }
+      .active:before{
+          content: '';
+          @include ab-center;
+          width: 10px;
+          height: 7px;
+          background: url(../img/icon/color-check.svg) no-repeat;
+          background-size: cover;
+      }
+  }
+
+  // size
+.size-wrap{ 
+    width: 288px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between; background-color: $white;
+    border: 2px solid $border-color; border-radius: 100px;
+    overflow: hidden;
+    margin-top: 2px;
+}
+
+.btn-size{
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    background-color:$white;
+    font-size: 16px;
+    line-height: 22px;
+    color: $gray;
+}
+
+.btn-size:not(:last-child){
+    border-right: 2px solid $border-color;
+}
+
+.btn-size.active{
+    background-color: $navy;
+    color: $white; }
+
+// quantity
+.quantity-wrap{
+  width: 118px;
+  height: 40px;
+  @include flex(between);
+  background-color: $white;
+  border: 2px solid $border-color;
+  border-radius: $form-radius;
+  overflow: hidden;
+  margin-top: 2px;
+
+   .btn-quantity{ 
+    width: 100%;
+    border: none;
+    background-color: $white;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+   .quantity-value{ 
+      @include inline-flex;
+      width: 100%;
+      height: 100%;
+      border-left: 2px solid $border-color;
+      border-right: 2px solid $border-color;
+      font-size: 16px;
+      line-height: 22px;
+      color: $navy; }
+    }
+
+.btn-remove{ 
+      position: absolute;
+      right: 5px;
+      top: 47px;
+      width: 16px;
+      height: 16px;
+      border: none;
+      background: url(../img/icon/remove.svg) no-repeat center / cover;
+  }
+
+  // content step-circle
+  .step-circle{ 
+    position: relative;
+    @include inline-flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $border-color;
+    font-size: 18px;
+    line-height: 26px;
+    color: $gray;
+    flex-shrink: 0; 
+  }
+    

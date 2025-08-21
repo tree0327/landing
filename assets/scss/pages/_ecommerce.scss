@@ -1,0 +1,446 @@
+/* ecommerce-7 */
+.ecommerce-7{
+
+    .text-label{
+        @include text-style(label, $gray, center);
+    }
+
+    .main-title{
+        @include text-style(title, $navy, center);
+        margin: 10px 0 74px;
+    }
+
+    .nav{ 
+        @include flex(start, center);
+        gap: 33px;
+        margin-bottom: 23px;
+        overflow: auto;
+
+        @include max(T){
+            flex-wrap: nowrap;
+            gap: 0;
+        }
+
+        &-link{
+            @include text-style(article, $navy);
+            font-weight: 600;
+            text-wrap: nowrap;
+            background-color: transparent;
+            border-radius: 0;
+
+            &.active{
+                background-color: transparent;
+                color: $gray;
+                border-bottom: 2px solid $border-color;
+            }
+        }
+    }
+
+    .row{
+        row-gap: 70px;
+    }
+
+   .acc-info{
+        @include flex(between, start);
+        margin: 20px 0 10px;
+
+        .acc-name{
+            @include text-style(article, $navy)
+        }
+   }
+
+   
+}
+
+/* ecommerce-18 */
+.ecommerce-18{
+    .main-title{
+        @include text-style(title, $navy);
+        margin-bottom: 40px;
+    }
+
+    .nav-wrap{
+        @include flex(between);
+        padding-bottom: 30px;
+        
+        @include max(T){
+        &{
+            flex-wrap: nowrap;
+        }
+    }
+    }
+
+    .nav{
+        @include flex(start);
+        gap: 26px;
+
+        &-link{
+            @include text-style(label, $gray);
+            font-weight: 700;
+            background-color: transparent;
+            border-radius: 0;
+
+            &.active{
+                background-color: transparent;
+                color: $navy;
+            }
+        }
+
+       @include max(T){
+        &{
+            flex-wrap: nowrap;
+            text-wrap: nowrap;
+            overflow: auto;
+            gap: 0;
+        }
+    }
+    }
+
+    .select-wrap{
+        .text-label{
+            @include text-style(label, $gray);
+        }
+
+        @include max(T){
+        &{
+            display: none;
+        }
+    }
+    }
+
+    .tab-pane ul{
+        row-gap: $gutter * 2 ;
+    }
+
+    .stuff{
+        @include flex(start, start);
+        gap: $gutter;
+        height: 100%;
+
+        @media (max-width: 1142px){
+            &{
+                flex-direction: column;
+                gap: $gutter - 10;
+
+                &-img{
+                    max-width: none !important;
+                }
+
+                &-info{
+                    width: 100%;
+                    min-height: 180px;
+                    
+                    .buttons{
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+
+        &-img{
+            max-width: 270px;
+
+            img{
+                width: 100%;
+                height: 100%;
+                
+                object-fit: cover;
+
+                &:hover{
+                    transform: scale(1.03);
+                    transition: all 400ms ease-in-out;
+                }
+            }
+        }
+
+        &-info{
+            @include flex-column(between, start);
+            height: 100%;
+            .sub-title{
+                @include text-style(sub, $navy);
+                font-weight: 700;
+            }
+
+            .text-label{
+                @include text-style(label, $gray);
+                margin-top: 1px;
+            }
+
+            .text-paragraph{
+                @include text-style(paragraph, $gray);
+                margin-top: 6px;
+            }
+
+            .buttons{
+                .btn-outlined{
+                    width: 110px;
+                    border-color: #482BE7;
+                    color: #482BE7;
+
+                    &:hover{
+                        background-color: #482BE7;
+                        color: #fff;
+                        transition: all 400ms ease-in-out;
+                    }
+                }
+
+                .btn-style-none{
+                    @include inline-flex;
+                    padding: 0 11px;
+                    border: 2px solid transparent;
+                    border-radius: $form-radius;
+                    color: #482BE7;
+
+                    &:hover{
+                        border-color: #482BE7;
+                        transition: border-color 400ms ease-in-out;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+/* ecommerce-33 */
+.ecommerce-33{
+    .cart-header, .cart-footer{
+        width: 100%;
+        display: flex;
+        padding-bottom: 19px;
+        border-bottom: 2px solid $border-color;
+    }
+
+    @include max(T){
+        .cart-header{
+            display: none;
+        }
+    }
+
+    .cart-footer{
+        padding-top: 20px;
+        border: none;
+        .form-control{
+            width: 140px;
+            font-size: 16px;
+            line-height: 22px;
+            color: $navy;
+            font-weight: 600;
+            padding: 0 18px;
+        }
+
+        .cost{
+            @include text-style(lebel, $navy);
+            font-weight: 700;
+        }
+
+        @include max(M){
+            & div{
+                @include flex-column(start);
+
+                .form-control{
+                    width: 100%;
+                }
+
+                .cost{
+                    margin-top: 7px;
+                }
+            }
+        }
+    }
+
+    .cart-item{
+        flex: 1;
+        max-width: 570px;
+        margin-right: $gutter;
+    }
+    .cart-opt{
+        flex: 1;
+        max-width: 370px;
+        margin-right: $gutter;
+    }
+    .cart-cost{
+        flex: 1;
+        max-width: 170px;
+    }
+    
+    .cart-list{
+        @include flex-column(start, start);
+
+        @include max(T){
+            &{
+                flex-wrap: wrap;
+
+                &-item{
+                    display: grid !important;
+                    grid-template-areas:
+                    'item1 item2'
+                    'item1 item3';
+                    grid-template-columns: 1fr 1fr;
+                    gap: $gutter;
+
+                    @include max(M){
+                        &{
+                            grid-template-areas:
+                            'item1'
+                            'item2'
+                            'item3';
+                            grid-template-columns: 1fr;
+                            row-gap: $gutter;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-item{
+            @include flex(start, start);
+            position: relative;
+            width: 100%;
+            padding: 36px 0;
+            border-bottom: 2px solid $border-color;
+
+            .cart-item{
+                @include flex(start, start);
+                gap: $gutter;
+
+                @include max(T){
+                    flex-direction: column;
+                    grid-area: item1;
+                    max-width: none;
+                    margin-right: 0;
+                    }
+
+                .item-img{
+                    flex: 1;
+                    max-width: 200px;
+                    height: 200px;
+                    border-radius: $radius;
+                    overflow: hidden;
+
+                    @include max(T){
+                        &{
+                            width: 100%;
+                            max-width: none;
+                            max-height: 180px;
+                        }
+                    }
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .item-info{
+                    flex: 1;
+                    @include flex-column(start, start);
+                    height: 200px;
+                }
+
+                .item-color{
+                    margin-top: auto;
+
+                    @include max(T){
+                        &{
+                            margin-top: $gutter;
+                        }
+                    }
+                }
+            }
+
+            .cart-opt{
+                @include flex-column(start, start);
+                height: 200px;
+
+                @include max(T){
+                    &{
+                        grid-area: item2;
+                        max-width: none;
+                        margin-right: 0;
+                        height: 180px;
+
+                        .quantity{
+                            margin-top: $gutter;
+                        }
+                    }
+                }
+
+                .quantity{
+                    margin-top: auto;
+
+                    @include max(T){
+                        margin-top: $gutter;
+                    }
+                }
+            }
+
+            .cart-cost{
+                @include flex-column(start, start);
+                height: 200px;
+
+                @include max(T){
+                    &{
+                        grid-area: item3;
+                    }
+                }
+
+                @include max(M){
+                    height: auto;
+                    gap: $gutter;
+                }
+
+                .cost-item{
+                    p{
+                        color: $navy;
+                    }
+
+                    &:last-child{
+                    margin-top: auto;
+                    height: 68px;
+
+                        @include max(T){
+                            &{
+                                margin-top: $gutter;
+                            }
+                        }
+
+                        @include max(M){
+                            &{
+                                flex-direction: row;
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .text-label{
+        @include text-style(label, $gray);
+        font-weight: 700;
+    }
+
+    .text-article{
+        @include text-style(article, $navy);
+    }
+
+    .item-list{
+        @include flex-column(start, start);
+    }
+    
+    @include max(T){
+        .btn-remove{
+            top: 36px;
+        }
+    }
+    
+    @include max(M){
+        .btn-remove{
+            top: 246px;
+        }
+    }
+}
